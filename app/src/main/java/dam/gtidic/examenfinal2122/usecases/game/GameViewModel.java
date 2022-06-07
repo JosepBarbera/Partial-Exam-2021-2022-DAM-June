@@ -13,7 +13,7 @@ import dam.gtidic.examenfinal2122.utils.PreferencesProvider;
 public abstract class GameViewModel extends ViewModel {
 
     private final static String TAG = "GameViewModel";
-
+    private GameActivity gameActivity;
     // Game Logic Attributes
     protected MutableLiveData<Level> level;
     protected LevelRepository repository;
@@ -95,5 +95,6 @@ public abstract class GameViewModel extends ViewModel {
     public void setProgress(MutableLiveData<String> progress) {
         this.progress = progress;
     }
+    public void setGameActivity(GameActivity gameActivity){this.gameActivity = gameActivity;}
 
 }

@@ -6,6 +6,7 @@ import android.util.Log;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import dam.gtidic.examenfinal2122.databinding.ActivityGameBinding;
 import dam.gtidic.examenfinal2122.usecases.adventure.AdventureActivity;
@@ -22,7 +23,7 @@ public abstract class GameActivity extends AppCompatActivity {
 
         binding = ActivityGameBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        // Set the viewModel
         setViewModel();
 
         setup();
