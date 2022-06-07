@@ -121,8 +121,9 @@
             android:text="Reset"
             tools:layout_editor_absoluteX="292dp"
             tools:layout_editor_absoluteY="621dp"
-            tools:ignore="MissingConstraints" />
-        <!-- android:onClick="@{() -> AdventureViewModel.resetGame()}" -->
+            tools:ignore="MissingConstraints"
+            android:onClick="@{() -> AdventureViewModel.resetGame()}"
+            />
 
 
 

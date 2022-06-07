@@ -37,10 +37,10 @@ public class AdventureViewModel extends ViewModel {
         return false;
     }
 
-    /*
+
     public void resetGame(){
         PreferencesProvider.providePreferences().edit().putInt("current_level", 0).commit();
-    } */
+    }
 
     public MutableLiveData<Integer> getLives() {
         return lives;
