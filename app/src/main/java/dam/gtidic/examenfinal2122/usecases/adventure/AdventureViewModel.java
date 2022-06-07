@@ -29,7 +29,7 @@ public class AdventureViewModel extends ViewModel {
         this.lives.setValue(actual_lives);
     }
 
-    /*
+
     public boolean noMoreLives(){
         if(PreferencesProvider.providePreferences().getInt("lives", 0) == 0){
             return true;
@@ -37,11 +37,11 @@ public class AdventureViewModel extends ViewModel {
         return false;
     }
 
-
+    /*
     public void resetGame(){
         PreferencesProvider.providePreferences().edit().putInt("current_level", 0).commit();
-    }
- */
+    } */
+
     public MutableLiveData<Integer> getLives() {
         return lives;
     }

@@ -12,9 +12,6 @@
         <variable
             name="AdventureViewModel"
             type="dam.gtidic.examenfinal2122.usecases.adventure.AdventureViewModel" />
-        <!--- <variable
-            name="GameViewModel"
-            type="dam.gtidic.examenfinal2122.usecases.game.GameViewModel" /> -->
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -36,8 +33,9 @@
             app:cornerRadius="50dp"
             app:layout_constraintBottom_toTopOf="@+id/mathAdventureLogo"
             app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="TextContrastCheck" />
-            <!-- android:enabled="@{!AdventureViewModel.noMoreLives() ||GameViewModel .level.equals(0)}" -->
+            tools:ignore="TextContrastCheck"
+            android:enabled="@{!AdventureViewModel.noMoreLives()}"
+            />
         <Button
             android:id="@+id/stringAdventure"
             android:layout_width="48dp"
