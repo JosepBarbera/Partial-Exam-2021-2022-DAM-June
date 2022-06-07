@@ -9,15 +9,19 @@ import android.widget.ImageView;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import dam.gtidic.examenfinal2122.R;
 import dam.gtidic.examenfinal2122.databinding.ActivityAdventureBinding;
+import dam.gtidic.examenfinal2122.databinding.ActivityGameBinding;
+import dam.gtidic.examenfinal2122.usecases.game.GameViewModel;
 import dam.gtidic.examenfinal2122.usecases.game.math.GameActivityMath;
 
 public class AdventureActivity extends AppCompatActivity {
 
-    private AdventureViewModel viewModel;
+    private AdventureViewModel adventureViewModel;
+    private GameViewModel gameViewModel;
     private ActivityAdventureBinding binding;
 
     @Override
@@ -26,14 +30,25 @@ public class AdventureActivity extends AppCompatActivity {
         setContentView(R.layout.activity_adventure);
         setup();
         data();
+
+        adventureViewModel.lives.observe(this, new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+            }
+        });
     }
+
+
+
 
     // Private methods
     private void setup(){
         binding = ActivityAdventureBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        viewModel = new ViewModelProvider(this).get(AdventureViewModel.class);
-        binding.setViewModel(viewModel);
+        adventureViewModel = new ViewModelProvider(this).get(AdventureViewModel.class);
+        binding.setAdventureViewModel(adventureViewModel);
+        //gameViewModel = new ViewModelProvider(this).get(GameViewModel.class);
+        //binding.setGameViewModel(gameViewModel);
         binding.setLifecycleOwner(this);
 
 

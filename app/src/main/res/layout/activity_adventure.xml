@@ -6,9 +6,15 @@
 
     <data>
         <import type="android.view.View" />
+        <import type="android.text.TextUtils" />
+
+
         <variable
-            name="viewModel"
+            name="AdventureViewModel"
             type="dam.gtidic.examenfinal2122.usecases.adventure.AdventureViewModel" />
+        <!--- <variable
+            name="GameViewModel"
+            type="dam.gtidic.examenfinal2122.usecases.game.GameViewModel" /> -->
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,7 +37,7 @@
             app:layout_constraintBottom_toTopOf="@+id/mathAdventureLogo"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="TextContrastCheck" />
-
+            <!-- android:enabled="@{!AdventureViewModel.noMoreLives() ||GameViewModel .level.equals(0)}" -->
         <Button
             android:id="@+id/stringAdventure"
             android:layout_width="48dp"
@@ -63,7 +69,7 @@
             android:id="@+id/livesTv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/qa_vides"
+            android:text="@{Integer.toString(AdventureViewModel.lives)}"
             android:textAlignment="center"
             android:textColor="#5D4037"
             android:textSize="14sp"
@@ -106,8 +112,21 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:drawable/btn_star"
             app:tint="#F89F00"
-            tools:ignore="ImageContrastCheck" />
-        <!--- QA: android:onClick="purchaseALive"-->
+            tools:ignore="ImageContrastCheck"
+            android:onClick="@{() -> AdventureViewModel.purchaseLives()}"
+            />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            tools:layout_editor_absoluteX="292dp"
+            tools:layout_editor_absoluteY="621dp"
+            tools:ignore="MissingConstraints" />
+        <!-- android:onClick="@{() -> AdventureViewModel.resetGame()}" -->
+
+
+
+ </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
