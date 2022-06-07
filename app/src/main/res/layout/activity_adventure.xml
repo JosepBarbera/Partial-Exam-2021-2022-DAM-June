@@ -57,14 +57,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_launcher_foreground"
-            tools:ignore="DuplicateSpeakableTextCheck"
-            />
+            tools:ignore="DuplicateSpeakableTextCheck" />
 
         <TextView
             android:id="@+id/livesTv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{Integer.toString(viewModel.lives)}"
+            android:text="@string/qa_vides"
             android:textAlignment="center"
             android:textColor="#5D4037"
             android:textSize="14sp"
@@ -78,11 +77,11 @@
             android:layout_width="143dp"
             android:layout_height="198dp"
             android:layout_marginStart="16dp"
-            android:layout_marginBottom="32dp"
-            android:contentDescription="@string/todo"
+            android:layout_marginBottom="36dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/math" />
+            app:srcCompat="@drawable/math"
+            android:contentDescription="@string/todo" />
 
         <ImageView
             android:id="@+id/stringAdventureLogo"
@@ -107,10 +106,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:drawable/btn_star"
             app:tint="#F89F00"
-            tools:ignore="ImageContrastCheck"
-            android:onClick="@{() -> viewModel.purchaseLives()}"
-            />
-
+            tools:ignore="ImageContrastCheck" />
+        <!--- QA: android:onClick="purchaseALive"-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
