@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,7 +50,7 @@ public class AdventureActivity extends AppCompatActivity {
         Log.d(this.getClass().getSimpleName(),"...data() ");
     }
 
-    private void showMathAdventure(View view){
+    public void showMathAdventure(View view){
             startActivity( new Intent(this, GameActivityMath.class));
     }
 
